@@ -47,11 +47,11 @@ class DialogReportMode extends ReportMode {
       title: Text(localizationOptions.dialogReportModeTitle),
       content: Text(localizationOptions.dialogReportModeDescription),
       actions: <Widget>[
-        FlatButton(
+        TextButton(
           child: Text(localizationOptions.dialogReportModeAccept),
           onPressed: () => _onAcceptReportClicked(context, report),
         ),
-        FlatButton(
+        TextButton(
           child: Text(localizationOptions.dialogReportModeCancel),
           onPressed: () => _onCancelReportClicked(context, report),
         ),

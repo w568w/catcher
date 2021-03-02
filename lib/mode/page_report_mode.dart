@@ -114,12 +114,12 @@ class PageWidgetState extends State<PageWidget> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              FlatButton(
+              TextButton(
                 child: Text(widget
                     .pageReportMode.localizationOptions.pageReportModeAccept),
                 onPressed: () => _onAcceptClicked(),
               ),
-              FlatButton(
+              TextButton(
                 child: Text(widget
                     .pageReportMode.localizationOptions.pageReportModeCancel),
                 onPressed: () => _onCancelClicked(),
@@ -141,6 +141,7 @@ class PageWidgetState extends State<PageWidget> {
   Widget _getStackTraceWidget() {
     if (widget.pageReportMode.showStackTrace) {
       var items = widget.report.stackTrace.toString().split("\n");
+      items.insertAll(0, widget.report.error.toString().split("\n"));
       return SizedBox(
         height: 300.0,
         child: ListView.builder(
